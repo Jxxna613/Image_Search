@@ -37,5 +37,4 @@
         app:layout_constraintTop_toBottomOf="@id/title"
         />
 
-
 </androidx.constraintlayout.widget.ConstraintLayout>

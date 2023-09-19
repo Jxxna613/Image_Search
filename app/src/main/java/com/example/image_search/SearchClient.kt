@@ -30,5 +30,4 @@ object SearchClient {
         .baseUrl(SEARCH_BASE_URL).addConverterFactory(GsonConverterFactory.create()).client(
             creatOkHttpClient()
         ).build()
-
 }
