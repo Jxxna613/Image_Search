@@ -3,6 +3,10 @@ plugins {
     id 'org.jetbrains.kotlin.android'
 }
 
+Properties properties = new Properties()
+properties.load(project.rootProject.file('local.properties').newDataInputStream())
+
+
 android {
     namespace 'com.example.image_search'
     compileSdk 33
@@ -30,8 +34,12 @@ android {
     kotlinOptions {
         jvmTarget = '17'
     }
-    buildFeatures{
+    buildFeatures {
         viewBinding true
+        buildConfig true
+    }
+    defaultConfig {
+        buildConfigField "String", "KAKAO_REST_API", properties['kakao_rest_api']
     }
 }
 

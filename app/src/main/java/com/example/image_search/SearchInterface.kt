@@ -1,5 +1,6 @@
 package com.example.image_search
 
+import android.media.Image
 import retrofit2.http.GET
 import retrofit2.http.QueryMap
 
