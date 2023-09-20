@@ -3,7 +3,7 @@ package com.example.image_search.Data
 import com.google.gson.annotations.SerializedName
 import java.util.Date
 
-data class SearchData(
+data class SearchDTO(
     @SerializedName("collection") val collection: String,
     @SerializedName("thumbnail_url") val thumbnail_url: String,
     @SerializedName("display_sitename") val display_sitename: String,
