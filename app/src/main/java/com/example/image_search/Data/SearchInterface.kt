@@ -1,4 +1,4 @@
-package com.example.image_search
+package com.example.image_search.Data
 
 import android.media.Image
 import retrofit2.http.GET

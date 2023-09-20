@@ -1,5 +1,6 @@
-package com.example.image_search
+package com.example.image_search.Data
 
+import com.example.image_search.BuildConfig
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
@@ -30,5 +31,4 @@ object SearchClient {
         .baseUrl(SEARCH_BASE_URL).addConverterFactory(GsonConverterFactory.create()).client(
             creatOkHttpClient()
         ).build()
-
 }
