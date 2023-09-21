@@ -12,7 +12,7 @@
         android:id="@+id/search_tv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#C9C9C9"
+        android:background="#EDC1B3"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -20,7 +20,7 @@
 
         <EditText
             android:id="@+id/search_edit_text"
-            android:layout_width="280dp"
+            android:layout_width="300dp"
             android:layout_height="45dp"
             android:layout_marginStart="20dp"
             android:background="@drawable/search_edit_text"
@@ -43,6 +43,7 @@
             app:layout_constraintTop_toTopOf="@id/search_tv"
             app:layout_constraintBottom_toBottomOf="@id/search_tv"
             app:layout_constraintStart_toEndOf="@id/search_edit_text"
+            app:layout_constraintEnd_toEndOf="parent"
             />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
@@ -50,9 +51,11 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/search_recyclerview"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="wrap_content"
         android:scrollbars="vertical"
         app:layout_constraintTop_toBottomOf="@id/search_tv"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

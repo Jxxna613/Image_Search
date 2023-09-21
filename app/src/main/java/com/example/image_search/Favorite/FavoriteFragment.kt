@@ -16,6 +16,7 @@ class FavoriteFragment : Fragment() {
     private var binding: FragmentFavoriteBinding? = null
     private lateinit var adapter: FavoriteAdapter
     private lateinit var xContext: Context
+    private lateinit var gridmanager: StaggeredGridLayoutManager
 
     private var heart: List<SearchModel> = listOf()
 
