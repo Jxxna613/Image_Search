@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Search.SearchFragment"
+    android:id="@+id/search_constraint"
     >
 
     <ImageView
@@ -37,5 +38,18 @@
         app:layout_constraintEnd_toEndOf="@id/search_title"
         app:layout_constraintStart_toStartOf="@id/search_title"
         app:layout_constraintTop_toBottomOf="@id/search_title" />
+
+    <ImageButton
+        android:id="@+id/heart_icon"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@drawable/heart"
+        android:scaleType="fitXY"
+        android:padding="15dp"
+        android:visibility="gone"
+        android:background="@android:color/transparent"
+        app:layout_constraintStart_toEndOf="@id/search_title"
+        app:layout_constraintTop_toBottomOf="@id/search_image"
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

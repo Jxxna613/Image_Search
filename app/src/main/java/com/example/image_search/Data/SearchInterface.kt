@@ -1,10 +1,18 @@
 package com.example.image_search.Data
 
-import android.media.Image
+
+import retrofit2.Call
 import retrofit2.http.GET
-import retrofit2.http.QueryMap
+import retrofit2.http.Header
+import retrofit2.http.Query
 
 interface SearchInterface {
-    @GET("https://dapi.kakao.com/v2/search/image")
-    suspend fun getImage(@QueryMap param: HashMap<String, String>) : Image
+    @GET("v2/search/image")
+    fun imageSearch(
+        @Header("Authorization") apiKey: String?,
+        @Query("query") query: String?,
+        @Query("sort") sort: String?,
+        @Query("page") page: Int,
+        @Query("size") size: Int
+    ): Call<ImageModel?>?
 }
