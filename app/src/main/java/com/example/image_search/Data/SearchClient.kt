@@ -9,8 +9,6 @@ import java.util.concurrent.TimeUnit
 
 object SearchClient {
 
-    private const val SEARCH_BASE_URL = "https://dapi.kakao.com/v2/search/"
-
     private fun creatOkHttpClient(): OkHttpClient {
         val interceptor = HttpLoggingInterceptor()
 
@@ -27,8 +25,9 @@ object SearchClient {
             .build()
     }
 
-    private val ImageRetrofit = Retrofit.Builder()
-        .baseUrl(SEARCH_BASE_URL).addConverterFactory(GsonConverterFactory.create()).client(
-            creatOkHttpClient()
-        ).build()
+    // 필수
+//    private val ImageRetrofit = Retrofit.Builder()
+//        .baseUrl(SEARCH_BASE_URL).addConverterFactory(GsonConverterFactory.create()).client(
+//            creatOkHttpClient()
+//        ).build()
 }
