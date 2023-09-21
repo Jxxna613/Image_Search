@@ -1,6 +1,7 @@
 package com.example.image_search.Data
 
 import com.example.image_search.BuildConfig
+import com.google.gson.GsonBuilder
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
@@ -9,26 +10,17 @@ import java.util.concurrent.TimeUnit
 
 object SearchClient {
 
-    private const val SEARCH_BASE_URL = "https://dapi.kakao.com/v2/search/"
+    val apiService: SearchInterface
+        get() = instance.create(SearchInterface::class.java)
 
-    private fun creatOkHttpClient(): OkHttpClient {
-        val interceptor = HttpLoggingInterceptor()
+    private val instance: Retrofit
+        private get() {
+            val gson = GsonBuilder().setLenient().create()
 
-        if (BuildConfig.DEBUG)
-            interceptor.level = HttpLoggingInterceptor.Level.BODY
-        else
-            interceptor.level = HttpLoggingInterceptor.Level.NONE
+            return Retrofit.Builder()
+                .baseUrl(Constants.BASE_URL)  // 기본 URL 설정
+                .addConverterFactory(GsonConverterFactory.create(gson))
+                .build()
+        }
 
-        return OkHttpClient.Builder()
-            .connectTimeout(20, TimeUnit.SECONDS)
-            .readTimeout(20, TimeUnit.SECONDS)
-            .writeTimeout(20, TimeUnit.SECONDS)
-            .addInterceptor(interceptor)
-            .build()
-    }
-
-    private val ImageRetrofit = Retrofit.Builder()
-        .baseUrl(SEARCH_BASE_URL).addConverterFactory(GsonConverterFactory.create()).client(
-            creatOkHttpClient()
-        ).build()
 }

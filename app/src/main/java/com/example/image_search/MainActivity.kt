@@ -4,11 +4,14 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.image_search.Favorite.FavoriteFragment
 import com.example.image_search.Search.SearchFragment
+import com.example.image_search.Search.SearchModel
 import com.example.image_search.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
+
+    var likeItem: ArrayList<SearchModel> = ArrayList()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,5 +34,15 @@ class MainActivity : AppCompatActivity() {
                 .replace(R.id.view, FavoriteFragment())
                 .commit()
         }
+    }
+
+    fun saveLikeItem(item: SearchModel) {
+        if (!likeItem.contains(item)) {
+            likeItem.add(item)
+        }
+    }
+
+    fun removeLikeItem(item: SearchModel) {
+        likeItem.remove(item)
     }
 }
