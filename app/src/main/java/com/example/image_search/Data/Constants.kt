@@ -4,7 +4,7 @@ object Constants {
 
     const val BASE_URL = "https://dapi.kakao.com"
 
-    const val AUTH_HEADER = "KakaoAK 33c978e4efae8622c4bd5b4940bfb564"
+    const val AUTH_HEADER = "KakaoAK"
 
     const val PREFSAVE_KEY = "SAVE_IMAGE_SEARCH"
 
