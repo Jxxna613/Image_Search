@@ -12,7 +12,7 @@
         android:id="@+id/search_tv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#EDC1B3"
+        android:background="#C8D9ED"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
