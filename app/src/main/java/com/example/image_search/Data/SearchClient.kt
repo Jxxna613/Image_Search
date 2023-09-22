@@ -18,7 +18,7 @@ object SearchClient {
             val gson = GsonBuilder().setLenient().create()
 
             return Retrofit.Builder()
-                .baseUrl(Constants.BASE_URL)  // 기본 URL 설정
+                .baseUrl(Constants.BASE_URL)
                 .addConverterFactory(GsonConverterFactory.create(gson))
                 .build()
         }
